@@ -43,16 +43,14 @@ var nextQuestionButton = "<input type='button' value='Next' id='next'> </input>"
 //counter to hold right answers
 var rightAnswerCounter = 0;
 // current right answer in number form
-var numericAnswer = arrayOfQuizQA[currArr]['correctAnswer']
-var answer = arrayOfQuizQA[currArr]['choices'][numericAnswer];
-//while loop counter
-var n = 0;
+
 
 
 
 // function to hold the quiz
 
 var quizMaker = function(){
+
 	//results page after all questions are answered
 	if(currArr >= arrayOfQuizQA.length){
 		$('body').append('<div id="quizBody"> </div>')
@@ -60,6 +58,8 @@ var quizMaker = function(){
 		$('#quizBody').append('<div id="result">' + 'you answered ' + rightAnswerCounter + ' questions correctly' + ' </div>');
 
 	}
+	var numericAnswer = arrayOfQuizQA[currArr]['correctAnswer']
+	var answer = arrayOfQuizQA[currArr]['choices'][numericAnswer];
 
 	//starting div
 	$('body').append('<div id="quizBody"> </div>')
@@ -74,7 +74,7 @@ var quizMaker = function(){
 	// go through choice array adding each choice to a html input element
 	for(var i =0; i < arrayOfQuizQA[currArr]['choices'].length; i++){
 
-		$('form').append("<input type='radio' name='choices' value="+ arrayOfQuizQA[currArr]['choices'][i]  +">" + arrayOfQuizQA[currArr]['choices'][i] + "</input>");
+		$('form').append("<input type='radio' name='choices' style='vertical-align:middle' value="+ arrayOfQuizQA[currArr]['choices'][i]  +">" + arrayOfQuizQA[currArr]['choices'][i] + "</input>");
 
 
 	}	
