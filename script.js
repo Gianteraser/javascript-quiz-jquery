@@ -42,7 +42,7 @@ var question = '<div>' + arrayOfQuizQA[currArr]['question'] + '</div>';
 var nextQuestionButton = "<input type='button' value='Next' id='next'> </input>"
 //counter to hold right answers
 var rightAnswerCounter = 0;
-// current right answer in number form
+
 
 
 
@@ -58,6 +58,7 @@ var quizMaker = function(){
 		$('#quizBody').append('<div id="result">' + 'you answered ' + rightAnswerCounter + ' questions correctly' + ' </div>');
 
 	}
+	// current right answer in number form
 	var numericAnswer = arrayOfQuizQA[currArr]['correctAnswer']
 	var answer = arrayOfQuizQA[currArr]['choices'][numericAnswer];
 
